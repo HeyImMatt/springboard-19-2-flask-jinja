@@ -4,21 +4,11 @@
 
 {% block content %}
 <form>
-  <label>Place:
-    <input type="text" name="place">
+  {% for prompt in prompts %}
+  <label>{{ prompt }}
+    <input type="text" name={{ prompt }}>
   </label>
-  <label>Noun:
-    <input type="text" name="noun">
-  </label>
-  <label>Verb:
-    <input type="text" name="verb">
-  </label>
-  <label>Adjective:
-    <input type="text" name="adjective">
-  </label>
-  <label>Plural Noun:
-    <input type="text" name="plural_noun">
-  </label>
+  {% endfor %}
   <button>Generate Madlib</button>
 </form>
 
