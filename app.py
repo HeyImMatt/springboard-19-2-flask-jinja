@@ -12,4 +12,5 @@ def home():
 @app.route('/story', methods=['GET', 'POST'])
 def show_story():
     if request.method == 'POST':
-        return render_template('story.html', story_text=request.form)
+        story_text = story.generate(request.form)
+        return render_template('story.html', story_text=story_text)
