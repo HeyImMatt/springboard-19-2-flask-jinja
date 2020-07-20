@@ -1,9 +1,11 @@
 from flask import Flask, redirect, request, render_template, url_for
-# from flask_debugtoolbar import DebugToolbarExtension
+from flask_debugtoolbar import DebugToolbarExtension
 from stories import story, Story
 
 app = Flask(__name__)
-# app.config['SECRET_KEY'] = 'key-1234'
+app.config['SECRET_KEY'] = 'key-1234'
+
+debug = DebugToolbarExtension(app)
 
 @app.route('/')
 def home():
