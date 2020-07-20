@@ -3,7 +3,8 @@
 {% block title %}Madlibs!{% endblock %}
 
 {% block content %}
-<form>
+<p>To create a madlib, enter words for the following prompts and then click the Generate Madlib button</p>
+<form action="/story" method="POST">
   {% for prompt in prompts %}
   <label>{{ prompt }}
     <input type="text" name={{ prompt }}>
